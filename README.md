@@ -13,6 +13,10 @@ A sample project with the new BottomSheet classes from the android support libra
 - Set it's behavior to:
 
         app:layout_behavior="@string/bottom_sheet_behavior"
+        
+## Known issues
+- BottomSheetBehavior setState method doesn't work before the BottomSheet is expanded for a first time: https://code.google.com/p/android/issues/detail?id=201825
+- BottomSheetDialog stops being aligned to the bottom: https://code.google.com/p/android/issues/detail?id=201826
 
 ## Screenshots
 <img src="screens/screen-view.png" width="350"> <img src="screens/screen-dialog.png" width="350">
