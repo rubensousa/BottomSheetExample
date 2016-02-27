@@ -4,7 +4,7 @@ A sample project with the new BottomSheet classes from the android support libra
 
 ## Modes included
 
-- Simple view (A cardview is used in this sample)
+- Simple view (A LinearLayout is used in this sample)
 - BottomSheetDialog
 
 ## Simple view how-to
@@ -25,4 +25,3 @@ A sample project with the new BottomSheet classes from the android support libra
 
     compile 'com.android.support:appcompat-v7:23.2.0'
     compile 'com.android.support:design:23.2.0'
-    compile 'com.android.support:cardview-v7:23.2.0'
