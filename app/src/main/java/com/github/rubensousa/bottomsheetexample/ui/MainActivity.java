@@ -2,6 +2,7 @@ package com.github.rubensousa.bottomsheetexample.ui;
 
 import android.annotation.SuppressLint;
 import android.content.DialogInterface;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomSheetBehavior;
@@ -36,6 +37,11 @@ public class MainActivity extends AppCompatActivity implements ItemAdapter.ItemL
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         findViewById(R.id.showViewBtn).setOnClickListener(this);
         findViewById(R.id.showDialogBtn).setOnClickListener(this);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            findViewById(R.id.fakeShadow).setVisibility(View.GONE);
+        }
+
         mBottomSheet = findViewById(R.id.bottomSheet);
         mBehavior = BottomSheetBehavior.from(mBottomSheet);
 

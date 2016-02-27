@@ -7,7 +7,9 @@
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/bottomsheet_vertical_margin"
+        android:layout_marginTop="@dimen/bottomsheet_vertical_margin" />
 
 
 </LinearLayout>
