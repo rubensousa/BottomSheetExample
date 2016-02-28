@@ -1,6 +1,7 @@
 # BottomSheetExample
 A sample project with the new BottomSheet classes from the android support library
 
+For a simpler integration, consider using this: https://github.com/rubensousa/BottomSheetBuilder
 
 ## Modes included
 
