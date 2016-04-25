@@ -80,7 +80,6 @@ public class MainActivity extends AppCompatActivity implements ItemAdapter.ItemL
         items.add(new Item(R.drawable.ic_share_24dp, "Share"));
         items.add(new Item(R.drawable.ic_link_24dp, "Get link"));
         items.add(new Item(R.drawable.ic_content_copy_24dp, "Copy"));
-        items.add(new Item(R.drawable.ic_preview_24dp, "Preview"));
         return items;
     }
 
