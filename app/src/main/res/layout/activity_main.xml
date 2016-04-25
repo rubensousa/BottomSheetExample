@@ -41,34 +41,22 @@
             android:layout_height="wrap_content"
             android:text="Show dialog" />
 
+        <Button
+            android:id="@+id/showDialogFullscreenBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Show dialog fullscreen" />
+
 
     </LinearLayout>
 
-    <LinearLayout
+    <include
         android:id="@+id/bottomSheet"
+        layout="@layout/sheet"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:background="@android:color/white"
-        android:elevation="4dp"
-        android:orientation="vertical"
-        app:layout_behavior="@string/bottom_sheet_behavior"
-        tools:ignore="UnusedAttribute">
-
-        <View
-            android:id="@+id/fakeShadow"
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:background="@drawable/shadow" />
-
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/recyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/bottomsheet_vertical_margin"
-            android:layout_marginTop="@dimen/bottomsheet_vertical_margin" />
-
-    </LinearLayout>
+        app:layout_behavior="@string/bottom_sheet_behavior" />
 
 
 </android.support.design.widget.CoordinatorLayout>

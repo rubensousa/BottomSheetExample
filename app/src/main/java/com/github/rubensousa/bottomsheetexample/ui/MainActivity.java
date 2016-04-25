@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity implements ItemAdapter.ItemL
     private BottomSheetBehavior mBehavior;
     private View mBottomSheet;
     private BottomSheetDialog mBottomSheetDialog;
+    private BottomSheetBehavior mDialogBehavior;
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
@@ -37,6 +38,7 @@ public class MainActivity extends AppCompatActivity implements ItemAdapter.ItemL
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         findViewById(R.id.showViewBtn).setOnClickListener(this);
         findViewById(R.id.showDialogBtn).setOnClickListener(this);
+        findViewById(R.id.showDialogFullscreenBtn).setOnClickListener(this);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             findViewById(R.id.fakeShadow).setVisibility(View.GONE);
@@ -78,6 +80,7 @@ public class MainActivity extends AppCompatActivity implements ItemAdapter.ItemL
         items.add(new Item(R.drawable.ic_share_24dp, "Share"));
         items.add(new Item(R.drawable.ic_link_24dp, "Get link"));
         items.add(new Item(R.drawable.ic_content_copy_24dp, "Copy"));
+        items.add(new Item(R.drawable.ic_preview_24dp, "Preview"));
         return items;
     }
 
@@ -95,6 +98,10 @@ public class MainActivity extends AppCompatActivity implements ItemAdapter.ItemL
         if (v.getId() == R.id.showDialogBtn) {
             showBottomSheetDialog();
         }
+
+        if (v.getId() == R.id.showDialogFullscreenBtn) {
+            showBottomSheetDialogFullscreen();
+        }
     }
 
     private void showBottomSheetView() {
@@ -111,21 +118,23 @@ public class MainActivity extends AppCompatActivity implements ItemAdapter.ItemL
             mBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
         }
 
-        mBottomSheetDialog = new BottomSheetDialog(this);
         View view = getLayoutInflater().inflate(R.layout.sheet, null);
+        view.findViewById(R.id.fakeShadow).setVisibility(View.GONE);
+
         RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(new ItemAdapter(createItems(), new ItemAdapter.ItemListener() {
             @Override
             public void onItemClick(Item item) {
-                if (mBottomSheetDialog != null) {
-                    mBottomSheetDialog.dismiss();
-                }
+                mDialogBehavior.setState(BottomSheetBehavior.STATE_HIDDEN);
             }
         }));
 
+        mBottomSheetDialog = new BottomSheetDialog(this);
         mBottomSheetDialog.setContentView(view);
+        mDialogBehavior = BottomSheetBehavior.from((View) view.getParent());
+
         mBottomSheetDialog.show();
         mBottomSheetDialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
             @Override
@@ -133,5 +142,9 @@ public class MainActivity extends AppCompatActivity implements ItemAdapter.ItemL
                 mBottomSheetDialog = null;
             }
         });
+    }
+
+    private void showBottomSheetDialogFullscreen() {
+        new FullBottomSheetDialogFragment().show(getSupportFragmentManager(), "dialog");
     }
 }
