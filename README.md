@@ -7,6 +7,7 @@ For a simpler integration, consider using this: https://github.com/rubensousa/Bo
 
 - Simple view (A LinearLayout is used in this sample)
 - BottomSheetDialog
+- BottomSheetDialogFragment
 
 ## Simple view how-to
 
@@ -24,5 +25,5 @@ For a simpler integration, consider using this: https://github.com/rubensousa/Bo
 
 ## Dependencies
 
-    compile 'com.android.support:appcompat-v7:23.2.1'
-    compile 'com.android.support:design:23.2.1'
+    compile 'com.android.support:appcompat-v7:23.3.0'
+    compile 'com.android.support:design:23.3.0'
