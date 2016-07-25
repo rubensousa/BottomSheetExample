@@ -16,14 +16,10 @@ For a simpler integration, consider using this: https://github.com/rubensousa/Bo
 
         app:layout_behavior="@string/bottom_sheet_behavior"
         
-## Known issues
-- BottomSheetBehavior setState method doesn't work before the BottomSheet is expanded for a first time: https://code.google.com/p/android/issues/detail?id=201825
-- BottomSheetDialog stops being aligned to the bottom: https://code.google.com/p/android/issues/detail?id=201826
-
 ## Screenshots
 <img src="screens/screen-view.png" width="350"> <img src="screens/screen-dialog.png" width="350">
 
 ## Dependencies
 
-    compile 'com.android.support:appcompat-v7:23.3.0'
-    compile 'com.android.support:design:23.3.0'
+    compile 'com.android.support:appcompat-v7:24.1.1'
+    compile 'com.android.support:design:24.1.1'
